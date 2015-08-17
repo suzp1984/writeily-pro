@@ -3,13 +3,13 @@ package me.writeily;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 /**
  * Created by jeff on 2014-08-20.
  */
-public class PromptPinActivity extends ActionBarActivity {
+public class PromptPinActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class PromptPinActivity extends ActionBarActivity {
         // Get the pin a user may have set
         String[] stringArray = getResources().getStringArray(R.array.possibleLocksValues);
         String lockType = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.pref_lock_type_key), "");
-        if (lockType == null || lockType.equals("") || stringArray[0].equals(lockType)) {
+        if (lockType.equals("") || stringArray[0].equals(lockType)) {
             Intent mainIntent = new Intent(this, MainActivity.class);
             startActivity(mainIntent);
             this.finish();

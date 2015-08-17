@@ -31,7 +31,6 @@ import me.writeily.model.Constants;
 import me.writeily.model.WriteilySingleton;
 import me.writeily.settings.SettingsActivity;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private NotesFragment notesFragment;
